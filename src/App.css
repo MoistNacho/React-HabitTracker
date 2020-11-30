@@ -1,38 +1,188 @@
-.App {
-  text-align: center;
+@font-face {
+  font-family: "TmoneyRoundWindExtraBold";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/TmoneyRoundWindExtraBold.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+:root {
+  /* font Size */
+  --font-large: 40px;
+  --font-medium: 30px;
+  --font-small: 24px;
+
+  /* border */
+  --border-radius: 10px;
+  --border-base: 3px solid;
+
+  /* ScreenSize */
+  --screen-width: 500px;
+  --screen-height: 800px;
+
+  /* color */
+  --font-color: rgb(36, 36, 36);
+  --background-color: rgb(255, 253, 245);
+  --nav-color: #cbae82;
+  --main-background-color: #ffe0b2;
+  --input-color: #ffffe4;
+  --count-background-color: palevioletred;
+  --count-color: white;
+  --button-color: #77613e;
+  --button-delete: tomato;
+
+  /* margin&padding size */
+  --margin-large: 50px;
+  --margin-small: 10px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body {
+  color: var(--font-color);
+  font-family: "TmoneyRoundWindExtraBold";
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  background: var(--background-color);
+  background: linear-gradient(
+    170deg,
+    rgba(255, 253, 245, 1) 30%,
+    rgb(253, 202, 255) 100%
+  );
+  width: 100vw;
+  height: 100vh;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.app {
+  margin-top: var(--margin-large);
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  background-color: var(--main-background-color);
+  width: var(--screen-width);
+  height: var(--screen-height);
+  -webkit-box-shadow: 7px 7px 0px 0px rgba(50, 50, 50, 0.75);
+  -moz-box-shadow: 7px 7px 0px 0px rgba(50, 50, 50, 0.75);
+  box-shadow: 7px 7px 0px 0px rgba(50, 50, 50, 0.75);
 }
 
-.App-link {
-  color: #61dafb;
+button {
+  cursor: pointer;
+  outline: none;
+  border: none;
+  background-color: transparent;
+  transition: all 300ms ease;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+button:hover {
+  opacity: 0.7;
+}
+
+nav {
+  width: 100%;
+  text-align: center;
+  font-size: var(--font-large);
+  background-color: var(--nav-color);
+  align-items: center;
+  padding: var(--margin-small) 0;
+}
+
+.nav-count {
+  position: relative;
+  left: 38%;
+  color: var(--count-color);
+  font-size: var(--font-small);
+}
+
+.AddForm {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.AddForm-input {
+  flex-grow: 1;
+  outline: none;
+  border: none;
+  height: 100%;
+  padding: 0;
+  padding-left: calc(var(--margin-small) / 2);
+  font-size: var(--font-small);
+  background-color: var(--input-color);
+}
+
+.AddForm-btn {
+  height: 100%;
+  font-size: var(--font-small);
+  color: var(--count-color);
+  background-color: var(--button-color);
+}
+
+.habits {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 80%;
+  font-size: var(--font-small);
+  list-style: none;
+  overflow: scroll;
+}
+
+.habits::-webkit-scrollbar {
+  display: none;
+}
+
+.habit {
+  display: flex;
+  justify-content: space-between;
+  padding: var(--margin-small);
+}
+
+.habit-name {
+  width: 60%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.habit-count {
+  display: inline-block;
+  font-size: var(--font-medium);
+  text-align: center;
+  border-radius: 50%;
+  background-color: var(--count-background-color);
+  line-height: var(--font-large);
+  width: var(--font-large);
+  height: var(--font-large);
+  margin-right: var(--margin-small);
+  color: var(--count-color);
+}
+.habit-button {
+  font-size: var(--font-medium);
+}
+
+.habit-increase,
+.habit-decrease {
+  color: var(--button-color);
+}
+
+.habit-delete {
+  color: var(--button-delete);
+}
+
+.habit-resetBtn {
+  margin-top: var(--margin-large);
+  margin-bottom: calc(var(--margin-small) * 2);
+  font-size: var(--font-small);
+  background-color: var(--input-color);
+  border-radius: 50px;
+  border: 3px solid var(--nav-color);
+}
+
+.habit-resetBtn:hover {
+  background-color: var(--button-delete);
+  border: 3px solid var(--font-color);
+  color: var(--count-color);
 }
