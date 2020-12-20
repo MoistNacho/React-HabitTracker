@@ -7,5 +7,5 @@ Demo : https://moistnacho.github.io/React-HabitTracker/
 + React - Javascript Library for creating UI
 
 ## Preview
-![HabitTracker](https://user-images.githubusercontent.com/59498305/100607008-9ded3900-334d-11eb-83a8-3d3bf27e021c.PNG)
++ ![HabitTracker](https://user-images.githubusercontent.com/59498305/100607008-9ded3900-334d-11eb-83a8-3d3bf27e021c.PNG)
 
